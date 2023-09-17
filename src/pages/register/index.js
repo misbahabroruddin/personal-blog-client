@@ -1,3 +1,4 @@
+import { LoginContext } from '@/context/UserContext';
 import { register } from '@/fetch';
 import {
   Card,
@@ -7,7 +8,7 @@ import {
   Typography,
 } from '@material-tailwind/react';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 export default function Register() {
   const [first_name, setFirtName] = useState('');
@@ -15,6 +16,7 @@ export default function Register() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const { isLogin } = useContext(LoginContext);
   const router = useRouter();
 
   const handleRegister = async (e) => {
@@ -27,7 +29,6 @@ export default function Register() {
         email,
         password,
       });
-      console.log(data);
       setFirtName('');
       setLastName('');
       setUsername('');
@@ -39,6 +40,12 @@ export default function Register() {
       alert(error.message);
     }
   };
+
+  useEffect(() => {
+    if (isLogin) {
+      router.push('/');
+    }
+  }, [isLogin]);
   return (
     <Card
       color='gray'
@@ -89,7 +96,6 @@ export default function Register() {
           />
         </div>
         <Checkbox
-          color='white'
           label={
             <Typography
               variant='small'

@@ -57,7 +57,7 @@ export default function Comment({ getData, post_id }) {
         />
         <button
           type='submit'
-          className='w-[20%] bg-gray-900 text-gray-300 py-3 tracking-wider hover:bg-transparent hover:outline hover:outline-gray-200 '
+          className='w-[20%] bg-gray-900 text-gray-300 py-3 tracking-wider hover:bg-transparent hover:outline hover:outline-gray-200'
         >
           SUBMIT COMMENT
         </button>

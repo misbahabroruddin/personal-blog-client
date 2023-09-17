@@ -1,4 +1,4 @@
-import { LoginContext } from '@/context/useContex';
+import { LoginContext } from '@/context/UserContext';
 import { postLogin } from '@/fetch';
 import {
   Card,
@@ -28,7 +28,7 @@ export default function Login() {
       setPassword('');
       setIsLogin(true);
     } catch (error) {
-      console.log(error);
+      alert(error.message);
     }
   };
 

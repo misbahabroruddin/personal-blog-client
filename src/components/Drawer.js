@@ -5,8 +5,10 @@ import {
   Typography,
   IconButton,
 } from '@material-tailwind/react';
+import { useRouter } from 'next/router';
 
 export function DrawerDefault({ openDrawer, closeDrawer, open }) {
+  const router = useRouter();
   return (
     <React.Fragment>
       <Button onClick={openDrawer} className='block lg:hidden text-white'>
@@ -45,10 +47,6 @@ export function DrawerDefault({ openDrawer, closeDrawer, open }) {
             </svg>
           </IconButton>
         </div>
-        <Typography color='gray' className='mb-8 pr-4 font-normal'>
-          Material Tailwind features multiple React and HTML components, all
-          written with Tailwind CSS classes and Material Design guidelines.
-        </Typography>
         <div className='items-center gap-x-1 md:gap-x-2 lg:gap-x-6 lg:flex'>
           <p
             onClick={() => router.push('/')}
@@ -62,11 +60,11 @@ export function DrawerDefault({ openDrawer, closeDrawer, open }) {
           >
             BLOG
           </p>
-          <p className='px-3 py-1 lg:px-4 lg:py-2 2xl:px-6 2xl:py-3 text-gray-300 hover:text-gray-100 text-lg cursor-pointer'>
-            ABOUT
-          </p>
-          <p className='px-3 py-1 lg:px-4 lg:py-2 2xl:px-6 2xl:py-3 text-gray-300 hover:text-gray-100 text-lg cursor-pointer'>
-            CONTACT
+          <p
+            onClick={() => router.push('/blogs/add')}
+            className='px-3 py-1 lg:px-4 lg:py-2 2xl:px-6 2xl:py-3 text-gray-300 hover:text-gray-100 text-lg cursor-pointer'
+          >
+            CREATE POST
           </p>
         </div>
       </Drawer>

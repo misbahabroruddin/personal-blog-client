@@ -1,6 +1,5 @@
 import Layout from '@/components/Layout';
-import LoginContextProvider from '@/context/useContex';
-import LoginProvider from '@/context/useContex';
+import LoginContextProvider from '@/context/UserContext';
 import '@/styles/globals.css';
 import { ThemeProvider } from '@material-tailwind/react';
 

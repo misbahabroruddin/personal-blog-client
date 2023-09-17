@@ -11,9 +11,8 @@ const Editor = ({ handleChange, data }) => {
     <SunEditor
       setAllPlugins={true}
       onChange={handleChange}
-      onImageUploadBefore={console.log}
       setContents={data}
-      height='500px'
+      height='300px'
       setOptions={{
         buttonList: [
           [
